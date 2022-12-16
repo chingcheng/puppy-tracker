@@ -12,7 +12,7 @@
             {% for category in categories %}
 
             <p>
-                <a href="{% url 'list_details' category.id %}">{{ category.name }}</a>
+                <a href="{% url 'cat_details' category.name %}">{{ category.name }}</a>
             </p>
 
             {% endfor %}

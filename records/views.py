@@ -9,9 +9,18 @@ def list_categories(request):
     return render(request, "records/list.html", context)
 
 
+# @login_required
+# def list_details(request, id):
+#     log_details = get_object_or_404(Category, id=id)
+#     context = {"log_details": log_details}
+#     return render(request, "records/detail.html", context)
+
+
 @login_required
-def list_details(request, id):
-    log_details = get_object_or_404(Category, id=id)
+def cat_details(request, cat):
+    cat = cat.capitalize()
+    # category_object = Category.objects.get(name=cat)
+    log_details = get_object_or_404(Category, name=cat)
     context = {"log_details": log_details}
     return render(request, "records/detail.html", context)
 
