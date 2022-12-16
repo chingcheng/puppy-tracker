@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <main>
+        <div>
+            <h1>My Puppy Tracker</h1>
+            <p></p>
+        </div>
+        <div>
+            {% for category in categories %}
+
+            <p>
+                <a href="{% url 'list_details' category.id %}">{{ category.name }}</a>
+            </p>
+
+            {% endfor %}
+        </div>
+    </main>
+{% endblock content %}

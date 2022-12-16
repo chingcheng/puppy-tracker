@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <main>
+        <div>
+            <h1>Log a New Event</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button>Log</button>
+            </form>
+            <a href="{% url 'list_categories' %}"><button>Cancel</button></a>
+        </div>
+    </main>
+{% endblock content %}

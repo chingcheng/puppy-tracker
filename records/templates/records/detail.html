@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <main>
+        <div>
+            <h2>
+                My Puppy Tracker
+            </h2>
+            <h1>
+                {{ log_details.name }}
+            </h1>
+            <a href="{% url 'log_event' %}">Log a new event</a>
+        </div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for detail in log_details.logs.all %}
+                    <tr>
+                        <td>{{ detail.date|date:"N d, Y" }}</td>
+                        <td>{{ detail.date|time:"g:i A" }}</td>
+                        <td>{{ detail.description }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+{% endblock content %}
