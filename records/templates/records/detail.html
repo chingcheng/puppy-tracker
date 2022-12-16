@@ -9,7 +9,7 @@
                 My Puppy Tracker
             </h2>
             <h1>
-                {{ log_details.name }}
+                {{ category.name }}
             </h1>
             <a href="{% url 'log_event' %}">Log a new event</a>
         </div>
@@ -23,11 +23,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for detail in log_details.logs.all %}
+                    {% for log in category.logs.all %}
                     <tr>
-                        <td>{{ detail.date|date:"N d, Y" }}</td>
-                        <td>{{ detail.date|time:"g:i A" }}</td>
-                        <td>{{ detail.description }}</td>
+                        <td>{{ log.date|date:"N d, Y" }}</td>
+                        <td>{{ log.date|time:"g:i A" }}</td>
+                        <td>{{ log.description }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

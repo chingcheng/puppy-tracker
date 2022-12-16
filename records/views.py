@@ -17,11 +17,11 @@ def list_categories(request):
 
 
 @login_required
-def cat_details(request, cat):
-    cat = cat.capitalize()
+def category_details(request, category_name):
+    category_name = category_name.capitalize()
     # category_object = Category.objects.get(name=cat)
-    log_details = get_object_or_404(Category, name=cat)
-    context = {"log_details": log_details}
+    category = get_object_or_404(Category, name=category_name)
+    context = {"category": category}
     return render(request, "records/detail.html", context)
 
 
