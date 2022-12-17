@@ -1,16 +1,14 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block content %}
-    <main>
-        <div class="signup-form">
-            <h1>Sign Up</h1>
+        <main>
+            <h1>Edit Event</h1>
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button>Sign Up</button>
+                <button type="submit" name="save">Save</button>
+                <button type="submit" name="delete">Delete</button>
             </form>
-        </div>
-    </main>
+        </main>
 {% endblock content %}

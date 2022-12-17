@@ -13,6 +13,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class LogAdmin(admin.ModelAdmin):
     list_display = (
         "date",
+        "time",
         "description",
         "category",
         "id"

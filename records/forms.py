@@ -6,5 +6,5 @@ class LogForm(ModelForm):
     class Meta:
         model = Log
         fields = [
-            "date", "description", "category"
+            "date", "time", "description", "category"
         ]

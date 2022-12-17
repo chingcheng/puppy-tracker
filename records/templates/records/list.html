@@ -4,9 +4,11 @@
 
 {% block content %}
     <main>
-        <div>
+        <div class="categories-list">
             <h1>My Puppy Tracker</h1>
-            <p></p>
+            <p>
+                <a href="{% url 'log_blank_event' %}">Log a new event</a>
+            </p>
         </div>
         <div>
             {% for category in categories %}

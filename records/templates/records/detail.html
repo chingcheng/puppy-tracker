@@ -4,14 +4,14 @@
 
 {% block content %}
     <main>
-        <div>
+        <div class="log-detail">
             <h2>
                 My Puppy Tracker
             </h2>
             <h1>
                 {{ category.name }}
             </h1>
-            <a href="{% url 'log_event' %}">Log a new event</a>
+            <a href="{% url 'log_event' category.name %}">Log a new event</a>
         </div>
         <div>
             <table>
@@ -25,8 +25,8 @@
                 <tbody>
                     {% for log in category.logs.all %}
                     <tr>
-                        <td>{{ log.date|date:"N d, Y" }}</td>
-                        <td>{{ log.date|time:"g:i A" }}</td>
+                        <td><a href="{% url 'edit_event' log.id %}">{{ log.date|date:"N d, Y" }}</a></td>
+                        <td>{{ log.time|time:"g:i A" }}</td>
                         <td>{{ log.description }}</td>
                     </tr>
                     {% endfor %}

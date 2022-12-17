@@ -12,7 +12,8 @@ class Category(models.Model):
 
 
 class Log(models.Model):
-    date = models.DateTimeField(auto_now_add=False)
+    date = models.DateField(auto_now_add=False)
+    time = models.TimeField(auto_now_add=False, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     category = models.ForeignKey(
         Category,
