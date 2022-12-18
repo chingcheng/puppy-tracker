@@ -41,7 +41,7 @@ header nav ul li a {
 /* Make the input tags look nicer */
 input {
   height: 1.5em;
-  margin: 0;
+  margin: 5;
   padding: .25em .5em;
 }
 
